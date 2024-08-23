@@ -1,4 +1,4 @@
-# AnthroST
+# Spatial transcriptomics/10x visium data preparation
 This repository aims to detail the processing of space ranger pipeline from FATSTQ files to gene expression matrix.
 
 ## Download spaceranger
