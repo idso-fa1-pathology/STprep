@@ -1,3 +1,16 @@
+# K8S-related
+logs/
+.log-runner.sh
+done
+._*.yaml
+
+# Mac-related
+.DS_Store
+._.DS_Store
+
+# specific files
+*.lsf
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
