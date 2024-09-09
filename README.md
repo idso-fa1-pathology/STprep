@@ -1,5 +1,5 @@
 # Spatial transcriptomics/10x visium data preparation
-This repository aims to detail the processing of space ranger pipeline from FATSTQ files to gene expression matrix.
+This repository aims to detail the processing of space ranger pipeline to convert FATSTQ files to gene expression matrix.
 
 ## Spaceranger
 [10x website](https://www.10xgenomics.com/support/software/space-ranger/downloads) has everything you need.
@@ -20,9 +20,9 @@ After editing, save the changes and exit the editor by pressing Ctrl + X, then Y
 
 - To test if spaceranger is installed successfully
 
-navigate to your own dir, `/rsrch5/home/trans_mol_path/xpan7/project`, to ensure the output of testing sample is stored in your own dir instead of yuanlab dir.
+   navigate to your own dir, `/rsrch5/home/trans_mol_path/xpan7/project`, to ensure the output of testing sample is stored in your own dir instead of yuanlab dir.
 
-then `spaceranger testrun --id=tiny`
+   then `spaceranger testrun --id=tiny`    
 
 
 ### Seadragon - spacerager
@@ -33,7 +33,6 @@ Note that,
 - You'll see the following after `module load spaceranger`, but it doesn't mean the spaceranger version is 1.1.0; it's actually 3.0.1 if using `spaceranger --version` to check
 `Reference data are located in path
                 /rsrch3/scratch/reflib/REFLIB_data/spaceranger-1.1.0`
-
 - The error logs can be found in .out files. If you cannot find the error info in .err files, also check with .out files.
 
 
@@ -52,14 +51,10 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 8. `--image`: brightfield microscope image, i.e., high-res H&E image
 
 
-
 ### Tips for high-res H&E and alignment
 1. Ensure the high-res H&E image from your collaborator cover the ST area, can be biger that ST area, but cannot be smaller!!!
-
 2. Ensure the format of high-res H&E image is among .jpeg, .jpg, .png, .tiff relevant (.tif, .btf), qptiff, not .svs, .ndpi, .czi etc, whihc spaceranger and loupe browser are not compitable with. If the only available image is .svs, we can use Aperio software to crop and save as tiff.
-
 3. Ensure the aligmnet was conducted by the same person to mitigate batch effects.
-
 4. As per 10x, if the CytAssist image has partial fiducial frame obstruction by the tissue section or one or more edges were cropped, then it warrants continuing with the manual fiducial alignment workflow. Some subset of issues with the tissue staining (weak staining, incomplete staining, or excessive staining with leakage outside of the tissue section) can also interfere with the accurate identification of the tissue-associated spots using the automated image processing pipeline. In these cases, it is recommended to complete the manual fiducial alignment workflow.
 
 
