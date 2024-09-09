@@ -23,9 +23,10 @@ There is spaceranger module installed in Seadragon, please refer to `sample_spec
 
 Note that,
 
-- You'll see the following after `module load spaceranger`, but it doesn't mean the spaceranger version is 1.1.0; it's actually 3.0.1 if using `spaceranger --version` to check
+- You'll see the following after `module load spaceranger`, but it doesn't mean the spaceranger version is 1.1.0; it's actually 3.0.1 if using `spaceranger --version` to check with.
+   
+   `Reference data are located in path /rsrch3/scratch/reflib/REFLIB_data/spaceranger-1.1.0`
 
-`Reference data are located in path /rsrch3/scratch/reflib/REFLIB_data/spaceranger-1.1.0`
 - The error logs can be found in .out files. If you cannot find the error info in .err files, also check with .out files.
 
 
