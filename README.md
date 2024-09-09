@@ -11,17 +11,13 @@ This repository aims to detail the processing of space ranger pipeline to conver
 
 - Prepend the Space Ranger directory to your $PATH. This allows you to invoke the spaceranger command.
 `$ export PATH=/home/xpan7/spaceranger-3.1.0:$PATH`
-
-or add it to `.bashrc` where you can find `nano ~/.bashrc`
-After editing, save the changes and exit the editor by pressing Ctrl + X, then Y, and finally Enter.
+   or add it to `.bashrc` where you can find `nano ~/.bashrc`. After editing, save the changes and exit the editor by pressing Ctrl + X, then Y, and finally Enter.
 
 - To apply the changes made in .bash_profile without restarting the terminal, you can run:
 `source ~/.bashrc`
 
 - To test if spaceranger is installed successfully
-
    navigate to your own dir, `/rsrch5/home/trans_mol_path/xpan7/project`, to ensure the output of testing sample is stored in your own dir instead of yuanlab dir.
-
    then `spaceranger testrun --id=tiny`    
 
 
