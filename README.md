@@ -34,7 +34,7 @@ Note that,
 This is the flowchart for running spaceranger count for FFPE, adapted from [10x](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex) 
 ![](./screenshot/sp_input_ffpe.png)
 
-
+### Basic inputs for automatic alignment
 1. `--fastqs`: sequencing data, FASTQ files, from your collaborators or core facility.
 2. `--prob-set`: the probe set reference CSV file, downloaded from [10x](https://www.10xgenomics.com/support/software/space-ranger/downloads) if no customed targets, `Human reference (GRCh38)`.
 3. `--transcriptome`: the reference transcriptome for the species, downloaded from [10x](https://www.10xgenomics.com/support/software/space-ranger/downloads) if no customed targets, `Probe Set CSV V2`.
@@ -43,6 +43,9 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 6. `--cytaimage`: image captured by CytAssist instrument (contains fiducial frame), H&E-stained, small size
 7. `--darkimage`: dark background fluorescence microscope image
 8. `--image`: brightfield microscope image, i.e., high-res H&E image
+
+### Additional inpus for manual alignment
+`--loupe-alignment`:
 
 
 ### Tips for high-res H&E and alignment
