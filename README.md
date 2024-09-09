@@ -39,10 +39,17 @@ Note that,
 
 ## Data to spaceranger
 This is the flowchart for running spaceranger count for FFPE, adapted from [10x](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex) 
-
 ![](./screenshot/sp_input_ffpe.png)
 
-1. Sequencing data, FASTQ files, from your collaborators or core facility.
+
+1. `--fastqs`: sequencing data, FASTQ files, from your collaborators or core facility.
+2. `--prob-set`: the probe set reference CSV file, downloaded from [10x](https://www.10xgenomics.com/support/software/space-ranger/downloads) if no customed targets, `Human reference (GRCh38)`.
+3. `--transcriptome`: the reference transcriptome for the species, downloaded from [10x](https://www.10xgenomics.com/support/software/space-ranger/downloads) if no customed targets, `Probe Set CSV V2`.
+4. `--slide`: visium slide serial number, for example 'V10J25-015'. Strongly recommended for Visium HD. If unknown, use --unknown-slide instead
+5. `--area`: visium capture area identifier, for example 'A1' (or, e.g. 'A' for 11 mm capture area slides). Must be used along with --slide unless --unknown-slide is used
+6. `--cytaimage`: image captured by CytAssist instrument (contains fiducial frame), H&E-stained, small size
+7. `--darkimage`: dark background fluorescence microscope image
+8. `--image`: brightfield microscope image, i.e., high-res H&E image
 
 
 
@@ -55,23 +62,24 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 
 4. As per 10x, if the CytAssist image has partial fiducial frame obstruction by the tissue section or one or more edges were cropped, then it warrants continuing with the manual fiducial alignment workflow. Some subset of issues with the tissue staining (weak staining, incomplete staining, or excessive staining with leakage outside of the tissue section) can also interfere with the accurate identification of the tissue-associated spots using the automated image processing pipeline. In these cases, it is recommended to complete the manual fiducial alignment workflow.
 
+
 ## Potential issues and relevant solutions
 1. What if collaborators somehow swapped the positions of the visium slide during library preparation, e.g., it was supposed to be ID1 for A, and ID2 for B, however, they made A as ID2, and B as ID1.
 
-⋅⋅⋅Solution:
+   Solution:
 
 2. error: invalid value '/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/spatial-transcriptome/TMA5-161' for '--id <ID>'
 
-⋅⋅⋅Solution:
+   Solution:
 
 3. error: the argument '--loupe-alignment <PATH>' cannot be used with '--override-id'
 
-⋅⋅⋅Solution:
+   Solution:
 
 4. ERROR: You specified --slide V53B02-066 --area B, but during manual image alignment in Loupe you specified slide ID is not known.
 
-⋅⋅⋅Solution:
+   Solution:
 
 5. ERROR: You specified --slide V53B02-382 --area A, but during manual image alignment in Loupe you specified slide ID V53B02-382 and capture area A1.
 
-⋅⋅⋅Solution:
+   Solution:
