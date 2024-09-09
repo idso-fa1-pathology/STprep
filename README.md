@@ -38,7 +38,9 @@ Note that,
 
 
 ## Data to spaceranger
-![This is the flowchart for running spaceranger count for FFPE](./screenshot/sp_input_ffpe.png), adapted from [10x](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex)
+This is the flowchart for running spaceranger count for FFPE, adapted from [10x](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex) 
+
+![](./screenshot/sp_input_ffpe.png)
 
 1. Sequencing data, FASTQ files, from your collaborators or core facility.
 
@@ -56,20 +58,20 @@ Note that,
 ## Potential issues and relevant solutions
 1. What if collaborators somehow swapped the positions of the visium slide during library preparation, e.g., it was supposed to be ID1 for A, and ID2 for B, however, they made A as ID2, and B as ID1.
 
-Solution:
+⋅⋅⋅Solution:
 
 2. error: invalid value '/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/spatial-transcriptome/TMA5-161' for '--id <ID>'
 
-Solution:
+⋅⋅⋅Solution:
 
 3. error: the argument '--loupe-alignment <PATH>' cannot be used with '--override-id'
 
-Solution:
+⋅⋅⋅Solution:
 
 4. ERROR: You specified --slide V53B02-066 --area B, but during manual image alignment in Loupe you specified slide ID is not known.
 
-Solution:
+⋅⋅⋅Solution:
 
 5. ERROR: You specified --slide V53B02-382 --area A, but during manual image alignment in Loupe you specified slide ID V53B02-382 and capture area A1.
 
-Solution:
+⋅⋅⋅Solution:
