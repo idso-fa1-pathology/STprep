@@ -38,7 +38,7 @@ Note that,
 
 
 ## Data to spaceranger
-![This is the flowchart for running spaceranger count for FFPE](./screenshot/sp_input_ffpe), adapted from [10x] (https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex)
+![This is the flowchart for running spaceranger count for FFPE](./screenshot/sp_input_ffpe.png), adapted from [10x](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex)
 
 1. Sequencing data, FASTQ files, from your collaborators or core facility.
 
@@ -47,7 +47,7 @@ Note that,
 ### Tips for high-res H&E and alignment
 1. Ensure the high-res H&E image from your collaborator cover the ST area, can be biger that ST area, but cannot be smaller!!!
 
-2. Ensure the format of high-res H&E image is among .jpeg, .jpg, .png, .tiff relevant (.tif, .btf), qptiff, not .svs, .ndpi, .czi etc, whihc spaceranger and loupe browser are not compitable with.
+2. Ensure the format of high-res H&E image is among .jpeg, .jpg, .png, .tiff relevant (.tif, .btf), qptiff, not .svs, .ndpi, .czi etc, whihc spaceranger and loupe browser are not compitable with. If the only available image is .svs, we can use Aperio software to crop and save as tiff.
 
 3. Ensure the aligmnet was conducted by the same person to mitigate batch effects.
 
