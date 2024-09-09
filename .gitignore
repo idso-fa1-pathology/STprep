@@ -9,7 +9,7 @@ done
 ._.DS_Store
 
 # specific files
-*.lsf
+*_T6.lsf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

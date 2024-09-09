@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+#BSUB -J spaceranger-sample
+#BSUB -W 3:00
+#BSUB -o /rsrch5/scratch/trans_mol_path/xpan7/pipelines/logs/%J_lsf.out
+#BSUB -e /rsrch5/scratch/trans_mol_path/xpan7/pipelines/logs/%J_lsf.err
+#BSUB -q short
+#BSUB -n 16
+#BSUB -M 128
+#BSUB -R rusage[mem=128]
+
+module load spaceranger
+
+cd /rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/spatial-transcriptome/
+spaceranger count --id=TMA5-157_v1_auto_hpc \
+    --transcriptome=/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/ref-data/refdata-gex-GRCh38-2020-A \
+    --probe-set=/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/ref-data/Visium_Human_Transcriptome_Probe_Set_v2.0_GRCh38-2020-A.csv \
+    --fastqs=/rsrch6/home/trans_mol_path/yuan_lab/TIER1/anthracosis/visium_TMA5primary_2014-/seq_data \
+    --sample=LUADC-157 \
+    --cytaimage=/rsrch6/home/trans_mol_path/yuan_lab/TIER1/anthracosis/visium_TMA5primary_2014-/VisiumCytAssistRunInfo/assay_CAVG10434_LUADC_V53B02-382_1722442225_CytAssist/CAVG10434_2024-07-31_11-10-25_LUADC_V53B02-382_B_157.tif \
+    --image=/rsrch6/home/trans_mol_path/yuan_lab/TIER1/anthracosis/visium_TMA5primary_2014-/HE40x_tif/TMA5-157_3.tif \
+    --slide=V53B02-382 \
+    --area=B \
+    --slidefile=/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/slidefile/V53B02-382.gpr \
+    --create-bam=true \
+    --localcores=16 \
+    --localmem=128
