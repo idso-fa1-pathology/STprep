@@ -1,0 +1,16 @@
+#!/bin/bash
+# Please update dirs accordingly
+
+#BSUB -J spaceranger-sample
+#BSUB -W 3:00
+#BSUB -o /rsrch5/scratch/trans_mol_path/xpan7/pipelines/logs/%J_lsf.out
+#BSUB -e /rsrch5/scratch/trans_mol_path/xpan7/pipelines/logs/%J_lsf.err
+#BSUB -q short
+#BSUB -n 16
+#BSUB -M 128
+#BSUB -R rusage[mem=128]
+
+module load spaceranger
+
+module load ImageMagick/7.1.0-44
+magick CytAssist_11mm_FFPE_Human_Colorectal_Cancer_tissue_image.tif -define tiff:tile-geometry=256x256 -units PixelsPerCentimeter -compress LZW ptif:CytAssist_11mm_FFPE_Colorectal_pyramidLZW.tiff

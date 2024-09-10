@@ -52,16 +52,15 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 
 ### Tips for high-res H&E and alignment
 1. Ensure the high-res H&E image from your collaborator cover the ST area, can be biger that ST area, but cannot be smaller!!!
-2. Ensure the format of high-res H&E image is among .jpeg, .jpg, .png, .tiff relevant (.tif, .btf), qptiff, not .svs, .ndpi, .czi etc, whihc spaceranger and loupe browser are not compitable with. If the only available image is .svs, we can use Aperio ImageScope software to crop and save as tiff.
+2. Ensure the format of high-res H&E image is among .jpeg, .jpg, .png, .tiff relevant (.tif, .btf), qptiff, not .svs, .ndpi, .czi etc, which spaceranger and loupe browser are not compitable with. If the only available image is .svs, we can use Aperio ImageScope software to crop and save as tiff.
    - Lanch Aperio ImageScope in T3
    - Click Image -> Rotate image to align .svs and CytAssist image regarding the direction
    - Click extract region, then select the area relevant to CytAssist image to crop
    - Save it as TIF, with LZW compression, otherwise it'll be very large. You can also tweak the Quality (90 and above are recommended) and Tile Size (240 or 256 are recommended) settings
    ![](./screenshot/svs2tiff.png)
-
-
 3. Ensure the aligmnet was conducted by the same person to mitigate batch effects.
 4. As per 10x, if the CytAssist image has partial fiducial frame obstruction by the tissue section or one or more edges were cropped, then it warrants continuing with the manual fiducial alignment workflow. Some subset of issues with the tissue staining (weak staining, incomplete staining, or excessive staining with leakage outside of the tissue section) can also interfere with the accurate identification of the tissue-associated spots using the automated image processing pipeline. In these cases, it is recommended to complete the manual fiducial alignment workflow.
+5. Ensure the H&E images you are processing are exactly the same with the H&Es used in spaceranger.
 
 
 ## Potential issues and relevant solutions
