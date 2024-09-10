@@ -59,8 +59,9 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 
 ## Potential issues and relevant solutions
 1. What if collaborators somehow swapped the IDs of the areas on the visium slide during library preparation, e.g., it was supposed to be ID1 for A, and ID2 for B, however, they named ID1 on A as ID2, and named B as ID1.
-   Solution: - Firstly, check with your collaborators if they managed to re name the CytAssist run info, or the CytAssist image (with         fiducial). If no, you need to re name the  CytAssist images correctly.
-            - Secondly, in the `spaceranger count` command, input corrected files and flag `--override-id` if you use the automatic alignment, i.e., no input for `--loupe-alignment`.
+   **Solution:** 
+   - Firstly, check with your collaborators if they managed to re name the CytAssist run info, or the CytAssist image (with         fiducial). If no, you need to re name the  CytAssist images correctly.
+   - Secondly, in the `spaceranger count` command, input corrected files and flag `--override-id` if you use the automatic alignment, i.e., no input for `--loupe-alignment`.
 
 2. error: invalid value '/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/spatial-transcriptome/TMA5-161' for '--id <ID>'
 
