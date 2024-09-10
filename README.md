@@ -64,6 +64,7 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
       - Secondly, in the `spaceranger count` command, input corrected files and flag `--override-id` if you use the automatic alignment, i.e., no input for `--loupe-alignment`.
 
 2. error: invalid value '/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_xxxxxx/spatial-transcriptome/ID-161' for '--id <ID>'
+   
    **Solution:** The srting for `--id` is too long, it's required 64 characters or less. You can `cd` to the destination dir to run spaceranger.
 
 3. error: the argument '--loupe-alignment <PATH>' cannot be used with '--override-id'
