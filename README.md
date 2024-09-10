@@ -57,7 +57,7 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
    - Click Image -> Rotate image to align .svs and CytAssist image regarding the direction
    - Click extract region, then select the area relevant to CytAssist image to crop
    - Save it as TIF, with LZW compression, otherwise it'll be very large. You can also tweak the Quality (90 and above are recommended) and Tile Size (240 or 256 are recommended) settings
-   ![](./screenshot/scs2tiff.png)
+   ![](./screenshot/svs2tiff.png)
 
 
 3. Ensure the aligmnet was conducted by the same person to mitigate batch effects.
