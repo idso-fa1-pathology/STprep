@@ -4,7 +4,9 @@ This repository aims to detail the processing of space ranger pipeline to conver
 ## Spaceranger
 [10x website](https://www.10xgenomics.com/support/software/space-ranger/downloads) has everything you need.
 ### T6 - Download spaceranger
-`curl -o spaceranger-3.1.0.tar.gz "https://cf.10xgenomics.com/releases/spatial-exp/spaceranger-3.1.0.tar.gz?Expires=1725896757&Key-Pair-Id=APKAI7S6A5RYOXBWRPDA&Signature=WK99c6k20ugLmLa3~kMwPiUjEdiUe5IYmH4~~fK8CGazp4jPcFrCDaJSyCkrDyOE8lVf~mWUOLFOgoHEJdAca9O1lsRgjRR7wUWJL6olTM5zIuaA-bx0XI325baKaWZZraBE-r7trCltMzWwSuW4Cqtw1qp2GeMe2Gm40dUgFCVhwpRJFnc9i-ajM~s5ScJrl8mT4GFlJ4a56q2tmer0UxzmmatkdOMzRJdsCEH~CMGz0dfXdX0OEFbcOorAq3RPsmo4~nQOzwKRaG4LCCN8MeM9BAplrmImBJ0L0PedbkA3NixOv900YnxgBz8zscfKIe0meqWlxnOaKBUTE9igoQ__""`
+```
+curl -o spaceranger-3.1.0.tar.gz "https://cf.10xgenomics.com/releases/spatial-exp/spaceranger-3.1.0.tar.gz?Expires=1725896757&Key-Pair-Id=APKAI7S6A5RYOXBWRPDA&Signature=WK99c6k20ugLmLa3~kMwPiUjEdiUe5IYmH4~~fK8CGazp4jPcFrCDaJSyCkrDyOE8lVf~mWUOLFOgoHEJdAca9O1lsRgjRR7wUWJL6olTM5zIuaA-bx0XI325baKaWZZraBE-r7trCltMzWwSuW4Cqtw1qp2GeMe2Gm40dUgFCVhwpRJFnc9i-ajM~s5ScJrl8mT4GFlJ4a56q2tmer0UxzmmatkdOMzRJdsCEH~CMGz0dfXdX0OEFbcOorAq3RPsmo4~nQOzwKRaG4LCCN8MeM9BAplrmImBJ0L0PedbkA3NixOv900YnxgBz8zscfKIe0meqWlxnOaKBUTE9igoQ__""
+```
 
 ### T6 - Install spaceranger
 - Unpack, `tar -xzvf spaceranger-3.1.0.tar.gz`
@@ -56,9 +58,9 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 
 
 ## Potential issues and relevant solutions
-1. What if collaborators somehow swapped the positions of the visium slide during library preparation, e.g., it was supposed to be ID1 for A, and ID2 for B, however, they made A as ID2, and B as ID1.
-
-   Solution:
+1. What if collaborators somehow swapped the IDs of the areas on the visium slide during library preparation, e.g., it was supposed to be ID1 for A, and ID2 for B, however, they named ID1 on A as ID2, and named B as ID1.
+   Solution: - Firstly, check with your collaborators if they managed to re name the CytAssist run info, or the CytAssist image (with         fiducial). If no, you need to re name the  CytAssist images correctly.
+            - Secondly, in the `spaceranger count` command, input corrected files and flag `--override-id` if you use the automatic alignment, i.e., no input for `--loupe-alignment`.
 
 2. error: invalid value '/rsrch6/home/trans_mol_path/yuan_lab/TIER2/anthracosis/visium_TMA5primary2014/spatial-transcriptome/TMA5-161' for '--id <ID>'
 
