@@ -1,7 +1,7 @@
 #!/bin/bash
 # Please update dirs accordingly
 
-#BSUB -J spaceranger-sample
+#BSUB -J convert-tiff
 #BSUB -W 3:00
 #BSUB -o /rsrch5/scratch/trans_mol_path/xpan7/pipelines/logs/%J_lsf.out
 #BSUB -e /rsrch5/scratch/trans_mol_path/xpan7/pipelines/logs/%J_lsf.err
@@ -10,7 +10,9 @@
 #BSUB -M 128
 #BSUB -R rusage[mem=128]
 
-
+# This step aims to convert non-pyramial tif to pyramidal tif images, for which AI-TIL piplne can be applied.
+# Note that the TIFF format has a file size limit of 4 GB using magick, you'll get errors if exceeding.
+# magick doesn't support .svs
 module load ImageMagick/7.1.0-44
 cd /rsrch6/home/trans_mol_path/yuan_lab/TIER1/anthracosis/visium_TMA5primary_2014-/HE40x_tif
-magick TMA5-157-svs.tif -define tiff:tile-geometry=256x256 -units PixelsPerCentimeter -compress LZW ptif:TMA5-157-svs-pyramid.tiff
+magick TMA5-157.tif -define tiff:tile-geometry=256x256 -units PixelsPerCentimeter -compress LZW ptif:TMA5-157-pyramid.tiff
