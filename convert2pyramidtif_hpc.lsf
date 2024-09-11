@@ -10,7 +10,7 @@
 #BSUB -M 128
 #BSUB -R rusage[mem=128]
 
-module load spaceranger
 
 module load ImageMagick/7.1.0-44
-magick CytAssist_11mm_FFPE_Human_Colorectal_Cancer_tissue_image.tif -define tiff:tile-geometry=256x256 -units PixelsPerCentimeter -compress LZW ptif:CytAssist_11mm_FFPE_Colorectal_pyramidLZW.tiff
+cd /rsrch6/home/trans_mol_path/yuan_lab/TIER1/anthracosis/visium_TMA5primary_2014-/HE40x_tif
+magick TMA5-157-svs.tif -define tiff:tile-geometry=256x256 -units PixelsPerCentimeter -compress LZW ptif:TMA5-157-svs-pyramid.tiff
