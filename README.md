@@ -62,7 +62,7 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
    ```
    vips copy TMA5-157-svs.svs TMA5-157-svs.tif[pyramid,tile,compression=jp2k,Q=100,tile-width=240,tile-height=240]
    ```
-   There is no `vips`` module installed in seadragon, you need to insall [vips](https://formulae.brew.sh/formula/vips) in your local machine. Bio-Formats should also work, please refer to [bfconvert](https://bio-formats.readthedocs.io/en/latest/users/comlinetools/conversion.html).
+   There is no `vips` module installed in seadragon, you need to insall [vips](https://formulae.brew.sh/formula/vips) in your local machine. Bio-Formats should also work, please refer to [bfconvert](https://bio-formats.readthedocs.io/en/latest/users/comlinetools/conversion.html).
 3. Ensure the aligmnet was conducted by the same person to mitigate batch effects.
 4. As per 10x, if the CytAssist image has partial fiducial frame obstruction by the tissue section or one or more edges were cropped, then it warrants continuing with the manual fiducial alignment workflow. Some subset of issues with the tissue staining (weak staining, incomplete staining, or excessive staining with leakage outside of the tissue section) can also interfere with the accurate identification of the tissue-associated spots using the automated image processing pipeline. In these cases, it is recommended to complete the manual fiducial alignment workflow.
 5. Ensure the H&E images you are processing are exactly the same with the H&Es used in spaceranger.
