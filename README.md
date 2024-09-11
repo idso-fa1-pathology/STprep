@@ -47,7 +47,7 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 8. `--image`: brightfield microscope image, i.e., high-res H&E image
 
 ### Additional inpus for manual alignment
-`--loupe-alignment`:
+`--loupe-alignment`: A .json file consisting of registration infomation, which is obtained from [manual aligment (CytAssit image alignment or/and Fiducial alignment) with loupe browser](https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/running-pipelines/probe-based-assay-count-cytassist-gex).
 
 
 ### Tips for high-res H&E and alignment
@@ -63,8 +63,8 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
    vips copy TMA5-157-svs.svs TMA5-157-svs.tif[pyramid,tile,compression=jp2k,Q=100,tile-width=240,tile-height=240]
    ```
    There is no `vips` module installed in seadragon, you need to insall [vips](https://formulae.brew.sh/formula/vips) in your local machine. Bio-Formats should also work, please refer to [bfconvert](https://bio-formats.readthedocs.io/en/latest/users/comlinetools/conversion.html).
-3. Ensure the aligmnet was conducted by the same person to mitigate batch effects.
-4. As per 10x, if the CytAssist image has partial fiducial frame obstruction by the tissue section or one or more edges were cropped, then it warrants continuing with the manual fiducial alignment workflow. Some subset of issues with the tissue staining (weak staining, incomplete staining, or excessive staining with leakage outside of the tissue section) can also interfere with the accurate identification of the tissue-associated spots using the automated image processing pipeline. In these cases, it is recommended to complete the manual fiducial alignment workflow.
+4. If the image is clean and tissue is not overlaid with fiducial, you can use the automic alignment embedded in spaceranger pipeline. Otherwise, please use [loupe browser](https://www.10xgenomics.com/support/software/loupe-browser/latest) to do the manual alignment. There are two types aligment, one is to align high-res with CytAssist image with choosing 5-8 landmakers, the other is to align the fiducial. As per 10x, if the CytAssist image has partial fiducial frame obstruction by the tissue section or one or more edges were cropped, then it warrants **continuing with the manual fiducial alignment workflow**. Some subset of issues with the tissue staining (weak staining, incomplete staining, or excessive staining with leakage outside of the tissue section) can also interfere with the accurate identification of the tissue-associated spots using the automated image processing pipeline. In these cases, it is recommended to complete the manual fiducial alignment workflow.
+4. Conducting the manual aligment by the same person may help mitigate batch effects.
 5. Ensure the H&E images you are processing are exactly the same with the H&Es used in spaceranger.
 
 
@@ -80,12 +80,12 @@ This is the flowchart for running spaceranger count for FFPE, adapted from [10x]
 
 3. error: the argument '--loupe-alignment <PATH>' cannot be used with '--override-id'
 
-   Solution:
+   Solution: The `--override-id` option is only required if a .json file is not used and the IDs are swapped. If you are using a .json file then we don't use the `--override-id`; it is assumed that the .json file contains the correct information and it should override the slide metadata. 
 
 4. ERROR: You specified --slide V53B02-066 --area B, but during manual image alignment in Loupe you specified slide ID is not known.
 
-   Solution:
+   Solution: Check the .json file is the serial number and area are specified, specify these accordingly if no.
 
 5. ERROR: You specified --slide V53B02-382 --area A, but during manual image alignment in Loupe you specified slide ID V53B02-382 and capture area A1.
 
-   Solution:
+   Solution: This error likely happens when you use the .json file obtained from fiducial alignment. Changing `--area` from A to A1 can address the issue. I had this error for spaceranger v3.0.1, I've let 10x team know, not sure if they've fixed this bug in a later version.
